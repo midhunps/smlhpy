@@ -1,0 +1,26 @@
+{{ attach_library('ynotz_snh/user-content-region') }}
+{{ content['ynotz_snh_messages'] }}
+{{ content.signuplink }}
+{% if own_profile %}
+    {{ content.feedblock }}
+  {% endif %}
+<div class="user-teaser-wrap hidden-md hidden-lg">
+  {{ content.views_block__user_teaser_block_1_2 }}
+  {% if own_profile %}
+    {{ content.formclassblock_2 }}
+  {% endif %}
+</div>
+{{ content['ynotz_snh_content'] }}
+{% if own_profile and (content.totalpointsblock or content.views_block__user_points_list_block_1) %}
+  <div class="points-display-wrap">
+    {{ content.totalpointsblock }}
+    {{ content.views_block__user_points_list_block_1 }}
+  </div>
+{% endif %}
+<div class="user-content-wrap">
+  {% if own_profile and content.postyourcontent %}
+    {{ content.addcontent }}
+    {{ content.postyourcontent }}
+  {% endif %}
+  {{ content.views_block__my_posts_block_1 }}
+</div>
